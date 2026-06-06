@@ -1,0 +1,28 @@
+Main GitHub commands to use:
+-----------------------------------------------------------
+Use when you start coding session:
+
+See what changed:
+
+	git status
+
+Pull changes 
+
+	git pull
+
+--------------------------------------------------------------
+Use when coding session is finished:
+
+Save changes locally:
+
+	git add . 
+	git commit -m "message"
+
+Upload to GitHub
+	git push
+
+-------------------------------------------------------------
+
+Pull changes made(use when you start coding on any machine):
+
+	git pull	

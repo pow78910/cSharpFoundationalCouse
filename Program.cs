@@ -17,11 +17,6 @@ namespace Task4
 
         public static void Start()
         {
-          
-            Console.WriteLine("Console.Clear Test");
-            Console.ReadKey();
-            Console.Clear();
-            Console.ReadKey();
             Console.WriteLine("Welcome to this program");
             Console.WriteLine("This has been created to execute requirements from one of the tasks from the C# foundational course");
             Console.WriteLine("You can see the requirements of the program, or simply continue to see the output");
@@ -30,6 +25,7 @@ namespace Task4
             Console.WriteLine("See output(2)");
             Console.WriteLine("Updated requirements (technical)(3)");
             Console.WriteLine("Updated Output/Code (4)");
+            Console.WriteLine("View github commands for push/pull(g)");
             
 
            // ConsoleKeyInfo input = Console.ReadKey(true);
@@ -48,6 +44,9 @@ namespace Task4
                     break;
                 case '4':
                     Output();
+                    break;
+                case 'g':
+                    Requirements('g');
                     break;
                 default:
                     Console.WriteLine("Invalid Input, Try Again");
@@ -71,6 +70,9 @@ namespace Task4
                 case '3':
                     ProgramFuncs.OutputFile("./TextFiles/Task4RequirementsUpdated.txt");
                 break;
+                case'g':
+                    ProgramFuncs.OutputFile("./TextFiles/gitHubCommands.txt");
+                    break;
 
                 default:
                     Console.WriteLine("ERROR FLAG  ---- Press any key to return");
