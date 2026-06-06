@@ -1,0 +1,14 @@
+C:\Users\powellj\Documents\VsCodeProjects\cSharpCourse4-GradeCalculations\Task4-GradeCalc\obj\Debug\net10.0\Task4-GradeCalc.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\powellj\Documents\VsCodeProjects\cSharpCourse4-GradeCalculations\Task4-GradeCalc\obj\Debug\net10.0\Task4-GradeCalc.AssemblyInfoInputs.cache
+C:\Users\powellj\Documents\VsCodeProjects\cSharpCourse4-GradeCalculations\Task4-GradeCalc\obj\Debug\net10.0\Task4-GradeCalc.AssemblyInfo.cs
+C:\Users\powellj\Documents\VsCodeProjects\cSharpCourse4-GradeCalculations\Task4-GradeCalc\obj\Debug\net10.0\Task4-GradeCalc.csproj.CoreCompileInputs.cache
+C:\Users\powellj\Documents\VsCodeProjects\cSharpCourse4-GradeCalculations\Task4-GradeCalc\bin\Debug\net10.0\Task4-GradeCalc.exe
+C:\Users\powellj\Documents\VsCodeProjects\cSharpCourse4-GradeCalculations\Task4-GradeCalc\bin\Debug\net10.0\Task4-GradeCalc.deps.json
+C:\Users\powellj\Documents\VsCodeProjects\cSharpCourse4-GradeCalculations\Task4-GradeCalc\bin\Debug\net10.0\Task4-GradeCalc.runtimeconfig.json
+C:\Users\powellj\Documents\VsCodeProjects\cSharpCourse4-GradeCalculations\Task4-GradeCalc\bin\Debug\net10.0\Task4-GradeCalc.dll
+C:\Users\powellj\Documents\VsCodeProjects\cSharpCourse4-GradeCalculations\Task4-GradeCalc\bin\Debug\net10.0\Task4-GradeCalc.pdb
+C:\Users\powellj\Documents\VsCodeProjects\cSharpCourse4-GradeCalculations\Task4-GradeCalc\obj\Debug\net10.0\Task4-GradeCalc.dll
+C:\Users\powellj\Documents\VsCodeProjects\cSharpCourse4-GradeCalculations\Task4-GradeCalc\obj\Debug\net10.0\refint\Task4-GradeCalc.dll
+C:\Users\powellj\Documents\VsCodeProjects\cSharpCourse4-GradeCalculations\Task4-GradeCalc\obj\Debug\net10.0\Task4-GradeCalc.pdb
+C:\Users\powellj\Documents\VsCodeProjects\cSharpCourse4-GradeCalculations\Task4-GradeCalc\obj\Debug\net10.0\Task4-GradeCalc.genruntimeconfig.cache
+C:\Users\powellj\Documents\VsCodeProjects\cSharpCourse4-GradeCalculations\Task4-GradeCalc\obj\Debug\net10.0\ref\Task4-GradeCalc.dll

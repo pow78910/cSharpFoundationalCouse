@@ -1,0 +1,46 @@
+Your goal is to update the existing code to include the following features:
+
+	Use arrays to store student names and assignment scores.
+
+	Use a foreach statement to iterate through the student names as an outer program loop.
+
+	Use an if statement within the outer loop to identify the current student name and access that student's assignment scores.
+
+	Use a foreach statement within the outer loop to iterate through the assignment scores array and sum the values.
+
+	Use an updated algorithm within the outer loop to calculate the average exam score for each student.
+
+	Use an if-elseif-else construct within the outer loop to evaluate the average exam score and assign a letter grade automatically.
+
+	Integrate extra credit scores when calculating the student's final score and letter grade as follows:
+
+	Your code must detect extra credit assignments based on the number of elements in the student's scores array.
+	Your code must apply the 10% weighting factor to extra credit assignments before adding extra credit scores to the sum of exam scores.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Grade to score conversion 
+
+97 - 100   A+
+93 - 96    A
+90 - 92    A-
+87 - 89    B+
+83 - 86    B
+80 - 82    B-
+77 - 79    C+
+73 - 76    C
+70 - 72    C-
+67 - 69    D+
+63 - 66    D
+60 - 62    D-
+0  - 59    F
+
+---------------------------------------------------------------------------------
+
+Example Output 
+
+Student         Grade
+
+Sophia:         92.2    A-
+Andrew:         89.6    B+
+Emma:           85.6    B
+Logan:          91.2    A-

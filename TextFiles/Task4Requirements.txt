@@ -1,0 +1,21 @@
+Conditions for task 6:
+------------------------------------------------------------
+Basics: 
+
+Four students 
+Each has 5 exam scores 
+Each exam score is an int (0-100)
+Students overall exam score is the average of the 5 scores 
+------------------------------------------------------------
+Extra credit:
+
+Extra credit is included in the array for scores 
+Extra credit assignments are worth 10% of an exam score 
+Add extra credit assignment scores to the students total exam score before calculating the final numeric grade 
+------------------------------------------------------------
+Other:
+
+Letter grades need to be assigned based on the calculated final score for each student 
+Students names need to outputted with their grade 
+The app needs to support adding other students and scores with minimal impact to the code 
+------------------------------------------------------------

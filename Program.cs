@@ -1,0 +1,94 @@
+﻿
+using System;
+using System.Runtime.CompilerServices;
+
+
+
+namespace Task4
+{
+     public class Program
+    {
+      public static void Main (string[] args)
+        {
+            Console.Clear();
+            Start();
+
+        }
+
+        public static void Start()
+        {
+          
+            Console.WriteLine("Console.Clear Test");
+            Console.ReadKey();
+            Console.Clear();
+            Console.ReadKey();
+            Console.WriteLine("Welcome to this program");
+            Console.WriteLine("This has been created to execute requirements from one of the tasks from the C# foundational course");
+            Console.WriteLine("You can see the requirements of the program, or simply continue to see the output");
+
+            Console.WriteLine("\nView requirements(1)");
+            Console.WriteLine("See output(2)");
+            Console.WriteLine("Updated requirements (technical)(3)");
+            Console.WriteLine("Updated Output/Code (4)");
+            
+
+           // ConsoleKeyInfo input = Console.ReadKey(true);
+        while (true)
+        {
+            switch (MenuAccess.menuInput())
+            {
+                case '1':
+                    Requirements('1');
+                    break;
+                case '2':
+                    Output();
+                    break;
+                case '3':
+                    Requirements('3');
+                    break;
+                case '4':
+                    Output();
+                    break;
+                default:
+                    Console.WriteLine("Invalid Input, Try Again");
+                    break;
+                    
+            }
+        }
+
+
+        }
+
+       public static void Requirements(char fileRef)
+        {
+            Console.Clear();
+
+            switch(fileRef)
+            {
+                case '1':
+                ProgramFuncs.OutputFile("./TextFiles/Task4Requirements.txt");
+                    break;
+                case '3':
+                    ProgramFuncs.OutputFile("./TextFiles/Task4RequirementsUpdated.txt");
+                break;
+
+                default:
+                    Console.WriteLine("ERROR FLAG  ---- Press any key to return");
+                    Console.ReadKey();
+                    Start();
+                    break;
+                    }
+        }
+
+        public static void Output()
+        {
+            Console.Clear();
+            ProgramFuncs.DefiningScores();
+           
+        }
+
+
+
+
+    }
+}
