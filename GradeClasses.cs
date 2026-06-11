@@ -31,7 +31,7 @@ public class ProgramFuncs
        MenuAccess.StartReturn();    
     }
 
-    public static void DefiningScores(char outputRef)
+    public static void DefiningScores()
     {
         string[] students = new string[4];
          students[0] = "Alice";
@@ -55,15 +55,9 @@ public class ProgramFuncs
          scores[3] = [12,99,9,54,24, extraCred[3]];
 
         
-        switch (outputRef)
-        {
-            case '2':
-               // CalcScoresOutput(students, extraCred, scores);
-              return;
-            case '4':
+       
             CalcScoresOutputUpdated(students, extraCred, scores);
-            break;
-        }
+      
         
         
 
@@ -71,77 +65,6 @@ public class ProgramFuncs
 
     }
 
-   /* public static void CalcScoresOutput(string[] students, int[] extraCred, double[][] scores)
-    {
-
-        Console.Clear();
-            
-       //Loops through each of the 4 students 
-        for (int x = 0; x < 4; x++)
-        {
-            //Declares default grade which will then be changed after calculation 
-            //y varibale for exam count 
-            char grade = 'x';
-            
-            int y = 1;
-
-            Console.WriteLine($"Student {x + 1} - {students[x]}:\n");
-
-            foreach (double score in scores[x])
-            {
-
-                if (y < 6)
-                {
-                Console.WriteLine($"Exam {y} score: {score}");
-                y++;
-                }
-                else
-                {
-                    Console.WriteLine($"\nExtra credit assignment: {score}");
-                    Console.WriteLine($"This means you will get an extra {score / 10} added to you average grade");
-                }
-
-
-            }
-            Console.WriteLine($"\nAverage for scores: {(scores[x].Average()).ToString("F1")}");
-            Console.WriteLine($"Extra credit = {(scores[x][5] / 10).ToString("F1")}");
-            Console.WriteLine($"\nTotal: {(scores[x].Average() + (scores[x][5]) /10).ToString("F1")}");
-
-            switch ((scores[x].Average() + (scores[x][5]) /10))
-            {
-            case < 60:
-                grade = 'F';
-                break;
-            case < 70:
-                grade = 'D';
-                break;
-            case < 75:
-                grade = 'C';
-                break;
-            case < 80:
-                grade = 'B';
-                break;
-            case < 90:
-                grade = 'A';
-                break;
-            default:
-                
-                break;
-            }
-
-            Console.WriteLine($"Final Grade: {grade}");
-
-            Console.WriteLine("\nTest break\n");
-            Console.ReadKey();
-            Console.Clear();
-            Console.WriteLine("\n");
-        }
-
-         MenuAccess.StartReturn();
-            
-        
-    }
-    */
     
     public static void CalcScoresOutputUpdated(string[] students, int[] extraCred, double[][] scores)
     {

@@ -23,9 +23,8 @@ namespace Task4
 
             Console.WriteLine("\nView requirements(1)");
             Console.WriteLine("See output(2)");
-            Console.WriteLine("Updated requirements (technical)(3)");
-            Console.WriteLine("Updated Output/Code (4)");
-            Console.WriteLine("View github commands for push/pull(g)");
+          
+            Console.WriteLine("\n\nView github commands for push/pull(g)");
             
 
            // ConsoleKeyInfo input = Console.ReadKey(true);
@@ -37,13 +36,7 @@ namespace Task4
                     Requirements('1');
                     break;
                 case '2':
-                    Output('2');
-                    break;
-                case '3':
-                    Requirements('3');
-                    break;
-                case '4':
-                    Output('4');
+                    Output();
                     break;
                 case 'g':
                     Requirements('g');
@@ -82,10 +75,10 @@ namespace Task4
                     }
         }
 
-        public static void Output(char outputRef)
+        public static void Output()
         {
             Console.Clear();
-            ProgramFuncs.DefiningScores(outputRef);
+            ProgramFuncs.DefiningScores();
            
         }
 
