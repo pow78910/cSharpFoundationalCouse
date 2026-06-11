@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Task4-GradeCalc")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a22d504484320f04f4e324e1c6dc41d10602b9d4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+904355303ab980ba92425b7f109c0280051e1642")]
 [assembly: System.Reflection.AssemblyProductAttribute("Task4-GradeCalc")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Task4-GradeCalc")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -31,7 +31,7 @@ public class ProgramFuncs
        MenuAccess.StartReturn();    
     }
 
-    public static void DefiningScores()
+    public static void DefiningScores(char outputRef)
     {
         string[] students = new string[4];
          students[0] = "Alice";
@@ -54,18 +54,27 @@ public class ProgramFuncs
          scores[2]= [12,45,97,34,12, extraCred[2]];
          scores[3] = [12,99,9,54,24, extraCred[3]];
 
-        CalcScoresOutput(students, extraCred, scores);
+        
+        switch (outputRef)
+        {
+            case '2':
+               // CalcScoresOutput(students, extraCred, scores);
+              return;
+            case '4':
+            CalcScoresOutputUpdated(students, extraCred, scores);
+            break;
+        }
+        
+        
 
          
 
     }
 
-    public static void CalcScoresOutput(string[] students, int[] extraCred, double[][] scores)
+   /* public static void CalcScoresOutput(string[] students, int[] extraCred, double[][] scores)
     {
 
-
-           Console.SetBufferSize(Console.WindowWidth, Console.WindowHeight);
-           Console.Clear();
+        Console.Clear();
             
        //Loops through each of the 4 students 
         for (int x = 0; x < 4; x++)
@@ -124,6 +133,7 @@ public class ProgramFuncs
 
             Console.WriteLine("\nTest break\n");
             Console.ReadKey();
+            Console.Clear();
             Console.WriteLine("\n");
         }
 
@@ -131,12 +141,106 @@ public class ProgramFuncs
             
         
     }
+    */
     
     public static void CalcScoresOutputUpdated(string[] students, int[] extraCred, double[][] scores)
     {
-        Console.WriteLine("TEST");
+
+        double[] avgGrade = AvgGrade(students, scores, extraCred);
+        string[] studentLetterGrades = StudentLetterGrades(avgGrade);
+
+        Console.Clear(); 
+        Console.WriteLine("Student\t\t\tGrade\n");
+
+        for(int x=0; x<students.Length;x++)
+        {
+            Console.WriteLine($"{students[x]}\t\t\t{avgGrade[x]:F1}\t\t\t{studentLetterGrades[x]}");
+          
+        }
+
+
+
+
+
         MenuAccess.StartReturn();
 
+    }
+
+    public static double[] AvgGrade(string[] students, double[][] scores, int[]extraCred)
+    {
+        double[] avgTotal = new double[students.Length]; 
+
+        for (int x=0;x<students.Length;x++)
+        {
+            double avgExamGrades = scores[x].Average();
+            double extraCredFinalValue = (scores[x][5]/10);
+
+            avgTotal[x] = avgExamGrades + extraCredFinalValue;
+        }
+
+
+
+        return avgTotal;
+    }
+
+    public static string[] StudentLetterGrades(double[] avgTotal)
+    {
+
+        string[] studentLetterGrades = new string[avgTotal.Length];
+
+        for(int x=0; x< avgTotal.Length;x++)
+        {
+            switch(avgTotal[x])
+            {
+                case >=97 and <=100:
+                    studentLetterGrades[x] = "A+";
+                break;
+                case >=93 and <97 :
+                    studentLetterGrades[x] = "A";
+                break;
+                case >=90 and <93:
+                    studentLetterGrades[x] = "A-";
+                break;
+                case >=87 and <90:
+                    studentLetterGrades[x] = "B+";
+                break;
+                case >=83 and <87:
+                    studentLetterGrades[x] = "B";
+                break;
+                case >=80 and < 83:
+                    studentLetterGrades[x] = "B-";
+                break;
+                case >=77 and < 80:
+                    studentLetterGrades[x] = "C+";
+                break;
+                case >=73 and < 77 :
+                    studentLetterGrades[x] = "C";
+                break;
+                case >=70 and <73:
+                    studentLetterGrades[x] = "C-";
+                break;
+                case >=67 and <70:
+                    studentLetterGrades[x] = "D+";
+                break;
+                case >=63 and <67:
+                    studentLetterGrades[x] = "D";
+                break;
+                case >=60 and < 63:
+                    studentLetterGrades[x] = "D-";
+                break;
+                case <60:
+                    studentLetterGrades[x] = "F";
+                break;
+                default:
+                    studentLetterGrades[x] = "X";
+                break;
+
+            }
+        }
+
+
+
+        return studentLetterGrades;
     }
     
   

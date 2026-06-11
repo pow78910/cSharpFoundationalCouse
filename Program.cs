@@ -37,13 +37,13 @@ namespace Task4
                     Requirements('1');
                     break;
                 case '2':
-                    Output();
+                    Output('2');
                     break;
                 case '3':
                     Requirements('3');
                     break;
                 case '4':
-                    Output();
+                    Output('4');
                     break;
                 case 'g':
                     Requirements('g');
@@ -82,10 +82,10 @@ namespace Task4
                     }
         }
 
-        public static void Output()
+        public static void Output(char outputRef)
         {
             Console.Clear();
-            ProgramFuncs.DefiningScores();
+            ProgramFuncs.DefiningScores(outputRef);
            
         }
 
