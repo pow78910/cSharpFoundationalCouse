@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Linq;
 using System.Runtime.CompilerServices;
 
 
@@ -49,7 +50,7 @@ namespace Task4
         }
 
 
-        }
+    }
 
        public static void Requirements(char fileRef)
         {
@@ -78,7 +79,27 @@ namespace Task4
         public static void Output()
         {
             Console.Clear();
-            ProgramFuncs.DefiningScores();
+            Console.WriteLine("1) View students final averages and grades");
+            Console.WriteLine("2)View individual exam grades and extra credit");
+        
+        while (true)
+        {
+            switch (MenuAccess.menuInput())
+            {
+                case '1':
+                    ProgramFuncs.DefiningScores(1);
+                    break;
+                case '2':
+                    ProgramFuncs.DefiningScores(2);
+                    break;
+                default:
+                    Console.WriteLine("Invalid Input, Try Again");
+                    break;
+                    
+            }
+        }
+
+            
            
         }
 

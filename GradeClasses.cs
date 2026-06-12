@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Contracts;
 using System.Runtime.CompilerServices;
 using System.Xml.Schema;
@@ -31,7 +32,7 @@ public class ProgramFuncs
        MenuAccess.StartReturn();    
     }
 
-    public static void DefiningScores()
+    public static void DefiningScores(int outputRef)
     {
         string[] students = new string[4];
          students[0] = "Alice";
@@ -55,8 +56,15 @@ public class ProgramFuncs
          scores[3] = [12,99,9,54,24, extraCred[3]];
 
         
-       
-            CalcScoresOutputUpdated(students, extraCred, scores);
+            switch(outputRef)
+            {
+            case 1:
+                //CalcScoresOutputUpdated(students, extraCred, scores);
+            break;
+            case 2:
+                CalcScoresOutputUpdatedAgain(students, extraCred, scores);
+                break;
+            }
       
         
         
@@ -66,10 +74,10 @@ public class ProgramFuncs
     }
 
     
-    public static void CalcScoresOutputUpdated(string[] students, int[] extraCred, double[][] scores)
+    /*public static void CalcScoresOutputUpdated(string[] students, int[] extraCred, double[][] scores)
     {
 
-        double[] avgGrade = AvgGrade(students, scores, extraCred);
+        double[] totalGrade = Totals(students, scores, extraCred);
         string[] studentLetterGrades = StudentLetterGrades(avgGrade);
 
         Console.Clear(); 
@@ -84,26 +92,79 @@ public class ProgramFuncs
 
 
 
-
         MenuAccess.StartReturn();
 
     }
+    */
 
-    public static double[] AvgGrade(string[] students, double[][] scores, int[]extraCred)
+
+    public static void CalcScoresOutputUpdatedAgain(string[] students, int[] extraCred, double[][] scores)
     {
-        double[] avgTotal = new double[students.Length]; 
+        
+        (double[] examScoreTotal, double[]examScoreAvg, double[] finalTotal) = Totals(students, scores, extraCred);
+        string[] studentLetterGrades = StudentLetterGrades(finalTotal);
+        double[] gradeDifferenceAfterExtraCredit = GradeDifferenceAfterExtraCredit(examScoreTotal, examScoreAvg, finalTotal);
 
-        for (int x=0;x<students.Length;x++)
+    
+
+        Console.Clear(); 
+        Console.WriteLine("Student\t\t\tExam Score total\t\tOverall Total\t\tGrade\t\tExtra Credit\n");
+
+        for(int x=0; x<students.Length;x++)
         {
-            double avgExamGrades = scores[x].Average();
-            double extraCredFinalValue = (scores[x][5]/10);
-
-            avgTotal[x] = avgExamGrades + extraCredFinalValue;
+            Console.WriteLine($"{students[x]}\t\t\t\t{examScoreAvg[x]:F1}\t\t\t{finalTotal[x]:F1}\t\t\t{studentLetterGrades[x]}\t\t{extraCred[x]}({gradeDifferenceAfterExtraCredit[x]:F1}pts)");
+          
         }
 
 
 
-        return avgTotal;
+
+
+        MenuAccess.StartReturn();
+
+        
+    }
+    public static (double[] examScoreTotal, double[] examScoreAvg, double[] finalTotal) Totals (string[] students, double[][] scores, int[]extraCred)
+    {
+        double[] examScoreTotal = new double[students.Length];
+         double[] examScoreAvg = new double[students.Length];
+    
+        double[] extraCredFinalValue = new double[students.Length]; 
+
+        double[] examGradePlusExtraCred = new double[students.Length];
+        double[] finalTotal = new double[students.Length]; 
+
+       
+        
+        
+
+        for (int x=0;x<students.Length;x++)
+        {
+            //double avgExamGrades = scores[x].Average();
+
+            for (int y =0; y < scores[x].Length - 1; y++)
+            {
+
+                examScoreTotal[x] += scores[x][y];
+                
+               
+            }
+            examScoreAvg[x] = examScoreTotal[x] / scores[x].Length - 1; 
+            extraCredFinalValue[x] = (scores[x][5])/10;
+            
+            examGradePlusExtraCred[x] = examScoreTotal[x] + extraCredFinalValue[x];
+            finalTotal[x] = examScoreTotal[x] / (scores.Length);
+            
+    
+        }
+
+        /* foreach(double score in examScoreTotal)
+            {
+                Console.WriteLine(score);
+            }
+       Console.ReadKey();
+*/
+        return  (examScoreAvg, examScoreAvg, finalTotal);
     }
 
     public static string[] StudentLetterGrades(double[] avgTotal)
@@ -166,6 +227,33 @@ public class ProgramFuncs
         return studentLetterGrades;
     }
     
+    
+    
+    
+        public static double[] GradeDifferenceAfterExtraCredit (double[] examScoreTotal, double[] examScoreAvg, double[] finalTotal)
+    {
+         double[] gradeDifferenceAfterExtraCredit = new double[examScoreTotal.Length];
+         
+
+         for(int x = 0; x < examScoreTotal.Length; x++)
+        {
+            gradeDifferenceAfterExtraCredit[x] = finalTotal[x] - examScoreAvg[x];
+        }
+
+         
+/*
+        foreach (double total in finalTotal)
+        {
+                Console.WriteLine(total);
+        }
+         foreach (double score in examScoreTotal)
+        {
+                Console.WriteLine(score);
+        }
+        Console.ReadKey();
+        */
+        return gradeDifferenceAfterExtraCredit;
+    }
   
 
 }
